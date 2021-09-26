@@ -22,13 +22,12 @@ public class Login {
     @FindBy(xpath = "//li[contains(text(),'Invalid email address.')]")
     WebElement emailerror;
 
-    public Login(WebDriver driver)
-    {
+    public Login(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public  String doLogin(String email,String password) throws InterruptedException {
+    public String doLogin(String email, String password) throws InterruptedException {
         linkLogin.click();
         txtemail.sendKeys(email);
         txtpassword.sendKeys(password);
@@ -36,7 +35,8 @@ public class Login {
         return lblUserName.getText();
 
     }
-    public  String doLoginforwrongpassword(String email,String password) throws InterruptedException {
+
+    public String doLoginforwrongpassword(String email, String password) throws InterruptedException {
         linkLogin.click();
         txtemail.sendKeys(email);
         txtpassword.sendKeys(password);
@@ -44,7 +44,8 @@ public class Login {
         return autherror.getText();
 
     }
-    public  String doLoginforwrongemail(String email,String password) throws InterruptedException {
+
+    public String doLoginforwrongemail(String email, String password) throws InterruptedException {
         linkLogin.click();
         txtemail.sendKeys(email);
         txtpassword.sendKeys(password);
@@ -52,4 +53,4 @@ public class Login {
         return emailerror.getText();
 
     }
-    }
+}
