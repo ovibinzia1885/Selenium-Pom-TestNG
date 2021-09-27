@@ -34,8 +34,7 @@ public class SetUp {
             }
         }
     }
-
-
+    
     @AfterTest
     public void logout(){
         driver.close();
