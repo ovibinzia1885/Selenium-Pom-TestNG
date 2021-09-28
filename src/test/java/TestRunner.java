@@ -10,7 +10,7 @@ import java.io.FileReader;
 public class TestRunner extends SetUp {
 
     Login objLogin;
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void doLogin() throws Exception {
         driver.get("http://automationpractice.com");
         objLogin = new Login(driver);
@@ -34,7 +34,7 @@ public class TestRunner extends SetUp {
         String autherror=objLogin.doLoginforwrongpassword(email,password);
         Assert.assertEquals(autherror,"Authentication failed.");
     }
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void doLoginwithrongemail() throws Exception {
         driver.get("http://automationpractice.com");
         objLogin = new Login(driver);
