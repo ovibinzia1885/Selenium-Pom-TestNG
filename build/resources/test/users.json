@@ -1,5 +1,14 @@
-{
-  "email": "testuser4554@test.com",
-  "password": "P@ssword123"
-}
-
+[
+  {
+    "email": "testuser4554@test.com",
+    "password": "P@ssword123"
+  },
+  {
+    "email": "testuser4554@test.com",
+    "password": "P@ssword23"
+  },
+  {
+    "email": "22222",
+    "password": "P@ssword123"
+  }
+]

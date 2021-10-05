@@ -1,8 +1,39 @@
 <suite thread-count="1" verbose="1" name="E-commerce portal automation">
-    <test name="E-commerce portal login">
+
+
+
+    <test name="E-commerce portal signup">
+        <groups>
+            <run>
+                <include name="login_positive"></include>
+            </run>
+
+        </groups>
         <classes>
-            <class name="TestRunner"/>
+            <class name="TestRunner.SignupTestRunner"/>
         </classes>
     </test>
-</suite>
 
+    <test name="E-commerce portal login">
+        <groups>
+            <run>
+                <include name="login_positive"></include>
+            </run>
+            <run>
+                <include name="login_negative"></include>
+            </run>
+
+        </groups>
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="login_negative"></include>-->
+<!--            </run>-->
+
+<!--        </groups>-->
+        <classes>
+            <class name="TestRunner.LogInTestRunner"/>
+        </classes>
+    </test>
+
+
+</suite>

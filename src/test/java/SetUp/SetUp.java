@@ -1,3 +1,6 @@
+package SetUp;
+
+import Utils.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -13,7 +16,11 @@ import java.util.concurrent.TimeUnit;
 
 public class SetUp {
     public WebDriver driver;
-    @BeforeTest
+    // only we use group only for smoke test
+    //@BeforeTest(groups={"login_positive","login_negative"}) for run all test case
+    //@BeforeTest(groups={"login_negative"}) for run  negative test case
+
+    @BeforeTest(groups ={"login_positive","login_negative"})// we can not run multiple group at same time we run  separate test case run
     public void setUp(){
         ChromeOptions ops = new ChromeOptions();
         ops.addArguments("--headed");
