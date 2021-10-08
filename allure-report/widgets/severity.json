@@ -1,0 +1,41 @@
+[ {
+  "uid" : "bd3446da69100ede",
+  "name" : "login with valid email and invalid password",
+  "time" : {
+    "start" : 1633708397904,
+    "stop" : 1633708405340,
+    "duration" : 7436
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "11dea9b336391577",
+  "name" : "doLoginwithrongpassword",
+  "time" : {
+    "start" : 1633708383010,
+    "stop" : 1633708383010,
+    "duration" : 0
+  },
+  "status" : "unknown",
+  "severity" : "normal"
+}, {
+  "uid" : "74250580c447e9d4",
+  "name" : "doLoginwithrongemail",
+  "time" : {
+    "start" : 1633708382985,
+    "stop" : 1633708382989,
+    "duration" : 4
+  },
+  "status" : "unknown",
+  "severity" : "normal"
+}, {
+  "uid" : "7ba100fc98d7193",
+  "name" : "login with invalid email and valid password",
+  "time" : {
+    "start" : 1633708385095,
+    "stop" : 1633708397861,
+    "duration" : 12766
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
