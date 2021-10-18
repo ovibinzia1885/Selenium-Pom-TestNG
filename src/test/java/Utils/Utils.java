@@ -1,5 +1,6 @@
 package Utils;
 
+import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -46,7 +47,18 @@ public class Utils {
     }
 
     public void setPassword(String password) {
+
         this.password = password;
+    }
+
+    public void readJSONFile() throws IOException, ParseException {
+        JSONParser jsonParser = new JSONParser();
+        Object obj = jsonParser.parse(new FileReader("./src/test/resources/user.json"));
+        JSONObject userObj = (JSONObject) obj;
+
+        setEmail((String)userObj.get("email"));
+        setPassword((String)userObj.get("password"));
+
     }
 
     public void readJSONArray(int pos) throws IOException, ParseException {
@@ -59,8 +71,18 @@ public class Utils {
         setEmail((String) jsonObj.get("email"));
          setPassword((String) jsonObj.get("password"));
     }
+
     public String generateRandomEmail(int min,int max){
         double id=Math.random()*(max-min)+min;
         return "test"+(int)id+"@test.com";
+    }
+    public void addDescription(String data) throws Exception {
+        try{
+            Allure.description(data);
+        } catch(Exception e)
+
+        {
+            System.out.print(e.toString());
+        }
     }
 }

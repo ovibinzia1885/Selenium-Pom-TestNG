@@ -18,7 +18,8 @@ public class LogInTestRunner extends SetUp {
     Login objLogin;
     Utils utils;
 
-    @Test(enabled =true,priority = 1,description = "login with valid email and password",groups = "login_positive")
+    // @Test(enabled =true,priority = 1,description = "login with valid email and password",groups = "login_positive")
+    @Test(enabled = true, groups = "login", description = "Login with valid email and password")
     public void doLogin() throws Exception {
         driver.get("http://automationpractice.com");
         objLogin = new Login(driver);
@@ -26,9 +27,11 @@ public class LogInTestRunner extends SetUp {
         utils.readJSONArray(0);
         String email=utils.getEmail();
         String password=utils.getPassword();
+
         String user = objLogin.doLogin(email, password);
         Assert.assertEquals(user, "Test User");
         driver.findElement(By.xpath("//a[@class='logout']")).click();
+        utils.addDescription("User can logged in successfully with valid user and password\"");
     }
     @Test(enabled = false)
     public void doLoginwithrongpassword() throws Exception {
@@ -54,7 +57,7 @@ public class LogInTestRunner extends SetUp {
         String error=objLogin.doLoginforwrongemail(email,password);
         Assert.assertEquals(error,"Invalid email address.");
     }
-    @Test(enabled = true ,priority = 3,description = "login with valid email and invalid password",groups = "login_negative")
+    @Test(enabled = true, description = "Login with wrong password", groups = "login")
     public void doLoginForWrongPassword() throws Exception {
         driver.get("http://automationpractice.com");
         objLogin = new Login(driver);
@@ -64,8 +67,9 @@ public class LogInTestRunner extends SetUp {
         String password=utils.getPassword();
         String authError = objLogin.doLoginforwrongpassword(email, password);
         Assert.assertEquals(authError, "Authentication failed.");
+        utils.addDescription("Authentication error shows when user provides wrong Password");
     }
-    @Test(enabled = true,priority = 2,description = "login with invalid email and valid password",groups = "login_negative")
+    @Test(enabled = true, description = "Login with invalid email", groups = "login")
     public void doLoginForInvalidEmail() throws Exception {
         driver.get("http://automationpractice.com");
         objLogin = new Login(driver);
@@ -75,6 +79,7 @@ public class LogInTestRunner extends SetUp {
         String password=utils.getPassword();
         String error = objLogin.doLoginforwrongemail(email, password);
         Assert.assertEquals(error, "Invalid email address.");
+        utils.addDescription("Error message shows when user provides invalid email");
 
     }
 

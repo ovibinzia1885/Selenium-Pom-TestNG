@@ -19,8 +19,8 @@ public class SetUp {
     // only we use group only for smoke test
     //@BeforeTest(groups={"login_positive","login_negative"}) for run all test case
     //@BeforeTest(groups={"login_negative"}) for run  negative test case
-
-    @BeforeTest(groups ={"login_positive","login_negative"})// we can not run multiple group at same time we run  separate test case run
+    //@BeforeTest(groups ={"login_positive","login_negative"})// we can not run multiple group at same time we run  separate test case run
+    @BeforeTest(groups = {"login","purchase_product"})
     public void setUp(){
         ChromeOptions ops = new ChromeOptions();
         ops.addArguments("--headed");
@@ -41,9 +41,9 @@ public class SetUp {
             }
         }
     }
-    
-    @AfterTest
-    public void logout(){
-        driver.close();
+
+    @AfterTest(groups = "login")
+    public void Logout() throws InterruptedException {
+        driver.quit();
     }
 }

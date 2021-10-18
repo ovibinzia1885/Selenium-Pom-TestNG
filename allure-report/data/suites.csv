@@ -1,5 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"unknown","Fri Oct 08 21:53:02 BDT 2021","Fri Oct 08 21:53:02 BDT 2021","4","E-commerce portal automation","E-commerce portal login","TestRunner.LogInTestRunner","TestRunner.LogInTestRunner","doLoginwithrongemail","doLoginwithrongemail",""
-"passed","Fri Oct 08 21:53:05 BDT 2021","Fri Oct 08 21:53:17 BDT 2021","12766","E-commerce portal automation","E-commerce portal login","TestRunner.LogInTestRunner","TestRunner.LogInTestRunner","doLoginForInvalidEmail","login with invalid email and valid password",""
-"passed","Fri Oct 08 21:53:17 BDT 2021","Fri Oct 08 21:53:25 BDT 2021","7436","E-commerce portal automation","E-commerce portal login","TestRunner.LogInTestRunner","TestRunner.LogInTestRunner","doLoginForWrongPassword","login with valid email and invalid password",""
-"unknown","Fri Oct 08 21:53:03 BDT 2021","Fri Oct 08 21:53:03 BDT 2021","0","E-commerce portal automation","E-commerce portal login","TestRunner.LogInTestRunner","TestRunner.LogInTestRunner","doLoginwithrongpassword","doLoginwithrongpassword",""
