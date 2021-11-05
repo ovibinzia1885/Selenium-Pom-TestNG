@@ -20,14 +20,15 @@ public class SetUp {
     //@BeforeTest(groups={"login_positive","login_negative"}) for run all test case
     //@BeforeTest(groups={"login_negative"}) for run  negative test case
     //@BeforeTest(groups ={"login_positive","login_negative"})// we can not run multiple group at same time we run  separate test case run
-    @BeforeTest(groups = {"login","purchase_product"})
+   // @BeforeTest(groups = {"login","purchase_product"})
+    @BeforeTest(groups = "purchase_product")
     public void setUp(){
         ChromeOptions ops = new ChromeOptions();
         ops.addArguments("--headed");
         System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
         driver = new ChromeDriver(ops);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @AfterMethod //AfterMethod annotation - This method executes after every test execution
@@ -42,7 +43,7 @@ public class SetUp {
         }
     }
 
-    @AfterTest(groups = "login")
+    @AfterTest(groups = "purchase_product")
     public void Logout() throws InterruptedException {
         driver.quit();
     }
